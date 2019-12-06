@@ -1,0 +1,711 @@
+@charset "utf-8";
+
+/* Evergore Komo Grafikpaket 1.2.8.1 */
+
+/* ============================================================ */
+/* general                                                      */
+/* ============================================================ */
+*, *:before, *:after {
+  box-sizing: border-box;
+  border: 0 solid #606040;
+  outline: 0 solid #606040;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  background: #000;
+  color: #000;
+  font: normal normal 400 1rem/1.4 Helvetica, Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  padding: 0;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 2px 5px;
+}
+
+th,
+header {
+  background: url(gfx/th.png);
+  font-weight: 600;
+  padding: 2px 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+header,
+table[border="1"] > * > tr > * {
+  border-width: 1px;
+}
+
+div, dl, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 1rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.help {
+  color: #a00;
+  margin-top: 2rem;
+}
+
+/* dump output */
+pre {
+  color: #a00;
+  font: normal bold 1rem monospace;
+  margin: 2px;
+}
+
+.inactive {
+  color: #888;
+}
+
+
+/* ============================================================ */
+/* Eingabe-Elemente                                             */
+/* ============================================================ */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font: inherit;
+  font-weight: 400;
+  border: 1px #b0b080 inset;
+}
+
+.btn,
+.btn_hover,
+.btn_disabled,
+label {
+  line-height: 2rem;
+}
+
+label {
+  display: block;
+}
+label + label {
+  margin-top: .6rem;
+}
+
+.btn,
+.btn_hover,
+.btn_disabled {
+  width: auto !important;
+  min-width: 30px;
+  margin: .4rem;
+  border-width: 1px;
+}
+
+.btn {
+  background: #c0bd90;
+  color: #a00;
+}
+
+.btn_hover,
+.btn:hover {
+  background: #d6d6a5;
+  color: #a00;
+}
+
+.btn_disabled,
+.btn[disabled] {
+  background: #a6a386;
+  color: #777;
+}
+
+button + button {
+  margin-left: 1.5rem !important;
+}
+
+th > input[type="button"],
+th > input[type="submit"],
+th > button {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* große Eingabe-Felder */
+.IGBTEXT          { width:400px; height:200px; }
+.IGBTITLE         { width:400px; }
+.IGBTEXT_TAVERNE  { width:500px; height:200px; }
+.IGBTITLE_TAVERNE { width:500px; }
+.TA15             { width:150px; height:50px; }
+.TA20             { width:200px; height:50px; }
+.IGBTEXT_MARKET   { width:250px; height:100px; }
+
+/* Formate für Buttons, Selects und Textfelder */
+.L3  { width: 30px;  text-align: left; }
+.L5  { width: 50px;  text-align: left; }
+.L7  { width: 70px;  text-align: left; }
+.L8  { width: 80px;  text-align: left; }
+.L10 { width: 100px; text-align: left; }
+.L15 { width: 140px; text-align: left; }
+.L18 { width: 180px; text-align: left; }
+.L20 { width: 200px; text-align: left; }
+.L25 { width: 250px; text-align: left; }
+.L30 { width: 300px; text-align: left; }
+.L40 { width: 400px; text-align: left; }
+
+.C3  { width: 30px;  text-align: center; }
+.C4  { width: 40px;  text-align: center; }
+.C5  { width: 50px;  text-align: center; }
+.C7  { width: 70px;  text-align: center; }
+.C8  { width: 80px;  text-align: center; margin-bottom: 2px; }
+.C10 { width: 100px; text-align: center; }
+.C15 { width: 150px; text-align: center; }
+.C20 { width: 200px; text-align: center; }
+.C25 { width: 250px; text-align: center; }
+.C30 { width: 300px; text-align: center; }
+
+/* Checkboxen Handwerksgebäude */
+#page-worksheet label {
+  cursor: pointer;
+  display: block;
+}
+
+
+/* ============================================================ */
+/* Überschriften                                                */
+/* ============================================================ */
+
+/* Hauptüberschrift  */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 4px 0 10px;
+  padding: 3px;
+}
+
+/* Absatz-Überschriften */
+h2 {
+  background: url(gfx/th.png);
+  border-width: 1px 0;
+  color: #400000;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 15px 0 10px;
+  padding: 2px 5px;
+  text-align: left;
+}
+
+/* Überschrift der Navigation */
+h5 {
+  color: #400000;
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 9px 0 3px;
+  padding: 0;
+}
+
+/* Ingame-Meldungen */
+h6 {
+  border-color: #944;
+  border-width: 1px 0;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 3px 0;
+  padding: 0;
+}
+
+
+/* ============================================================ */
+/* Statusbalken                                                 */
+/* ============================================================ */
+.bar_life,
+.bar_action,
+.bar_exp {
+  padding: 2px;
+  text-align: left;
+  width: 100px;
+  font-size: 12px;
+  line-height: 14px;
+  background-repeat: no-repeat;
+}
+
+.bar_life   { background-image: url(gfx/bar_life.png); }
+.bar_action { background-image: url(gfx/bar_action.png); }
+.bar_exp    { background-image: url(gfx/bar_exp.png); }
+
+/* Fertigkeitenfortschritt */
+.PROGRESS {
+  background: url(gfx/progress.png) no-repeat;
+  width: 101px;
+}
+
+
+/* ============================================================ */
+/* Karte                                                        */
+/* ============================================================ */
+
+/* Geländegrafik in der Gruppenübersicht */
+.map,
+.map > a {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: block;
+  background-image: url(gfx/map_tiles.png);
+}
+
+.map_P { background-position: 0 0; }        /* Ebene */
+.map_H { background-position: -50px 0; }    /* Hochland */
+.map_F { background-position: -100px 0; }   /* Wald */
+.map_R { background-position: -200px 0; }   /* Gebirge */
+.map_M { background-position: -250px 0; }   /* Hochgebirge */
+.map_L { background-position: -150px 0; }   /* Seenland */
+.map_S { background-position: -300px 0; }   /* Sümpfe */
+.map_D { background-position: 0 -50px; }    /* Wüste */
+.map_O { background-position: -150px -50px; }/*Ozean */
+.map_K { background-position: -350px 0; }   /* Schnee */
+.map_I { background-position: -400px 0; }   /* Eis */
+.map_W { background-position: -50px -50px; }/* Watt */
+.map_E { background-position: -100px -50px; }/*Inseln */
+.map_Z { background-position: -250px -50px; }/*Nebel */
+/* Küste mit 1 Ecke*/
+.map_CB4 { background-position: -300px -50px; }
+.map_CB1 { background-position: -300px -100px; }
+.map_CB2 { background-position: -300px -150px; }
+.map_CB3 { background-position: -300px -200px; }
+/* Küste mit 2 Ecken*/
+.map_C3 { background-position: -350px -50px; }
+.map_C4 { background-position: -350px -100px; }
+.map_C1 { background-position: -350px -150px; }
+.map_C2 { background-position: -350px -200px; }
+/* Küste mit 3 Ecken*/
+.map_CA2 { background-position: -400px -50px; }
+.map_CA3 { background-position: -400px -100px; }
+.map_CA4 { background-position: -400px -150px; }
+.map_CA1 { background-position: -400px -200px; }
+/* Städte */
+.map_town0  { background-position: 0 -250px }
+.map_town1  { background-position: 0 -300px }
+.map_town11 { background-position: -50px -300px }
+.map_town2  { background-position: 0 -350px }
+.map_town12 { background-position: -50px -350px }
+
+/* Canvas Karte */
+#mapDisplay { max-width: 74%; }
+#mapControl,
+#dropzone   { width: 74%; }
+#mapMenu    { width: 26%; }
+
+/**** Karte ****/
+#mapDisplay {
+  background-image: url(gfx/map_veil.png), url(gfx/map_tiles.png);
+  background-size: 0 0;
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-height: 550px;
+  min-height: 200px;
+  overflow: hidden;
+  outline-width: 1px;
+  position: relative;
+}
+
+#mapDisplay > canvas {
+  position: absolute;
+  transform-origin: top left;
+  top: 0;
+  left: 0;
+}
+
+
+/**** Menü ****/
+#mapMenu {
+  float: right;
+  padding-left: 10px;
+}
+
+#mapMenu > section.active    { display: block; }
+#mapMenu > section + section { display: none;
+  margin-top: 10px;
+  padding: 0 5px;
+}
+
+
+/**** Menü, Info ****/
+#mapMenu dl > div.active { display: block; }
+#mapMenu dl > div        { display: none;
+  border-width: 0 1px 1px;
+  padding: 0 5px;
+}
+
+#mapMenu dd {
+  margin-left: 25px;
+}
+
+
+/**** Menü, Aufträge ****/
+#mapMenuTaskList {
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+}
+
+#mapMenuTaskList li {
+  padding: .3rem 0;
+  border-bottom-width: 1px;
+  margin-bottom: 1.2rem;
+}
+
+#mapMenuTaskList time {
+  float: right;
+}
+#mapMenuTaskList nav {
+  display: flex;
+  justify-content: space-between;
+}
+#mapMenuTaskList nav > button {
+  flex: 0 0 30px;
+}
+
+
+/**** Menü, Eingabe ****/
+#mapMenuNewTask > *.active  { height: auto; }
+#mapMenuNewTask > *         { height: 0;
+  overflow: hidden;
+}
+
+#mapMenuNewTask > menu > *.active      { display: inline; }
+#mapMenuNewTask > menu > *:not(header) { display: none; }
+
+#mapMenuNewTask > form {
+  white-space: nowrap;
+}
+
+#mapMenuNewTask > form > div {
+  display: inline-block;
+  width: 100%;
+  min-height: 5rem;
+  transition: transform .3s;
+  vertical-align: top;
+}
+
+#mapMenuNewTask > form > div > *:not(header) {
+  display: block;
+  line-height: 2rem;
+  margin: .5rem auto;
+  white-space: normal;
+}
+
+#mapMenuNewTask header > a {
+  cursor: pointer;
+  float: right;
+  padding-left: 20px;
+}
+
+
+/**** Steuerung ****/
+#mapControl {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+#mapZoom {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ============================================================ */
+/* Formate zur Formatierung der Links                           */
+/* ============================================================ */
+a,
+a:link,
+a:active,
+a:visited,
+a:hover {
+  color: #a00;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h5 ~ a {
+  line-height: 1.7rem;
+}
+
+
+/* ============================================================ */
+/* Ausrichtungsformate                                          */
+/* ============================================================ */
+.L, .LT      { text-align: left;       }
+.C           { text-align: center;     }
+.R, .RT      { text-align: right;      }
+.T, .LT, .RT { vertical-align: top;    }
+.M           { vertical-align: middle; }
+.B           { vertical-align: bottom; }
+
+
+/* ============================================================ */
+/* Farben                                                       */
+/* ============================================================ */
+.CR        { color: #f00; }
+.CG        { color: #007000; }
+.CB        { color: #00f; }
+.CI        { color: #777; }
+.CW        { color: #ccc; }
+/* Farben für Kampfberichte */
+.CFaction1 { color: #008 !important; }
+.CFaction2 { color: #700 !important; }
+.CWin      { color: #00f; }
+.CLose     { color: #d00; }
+.CDraw     { color: #00f; }
+.CAttack   { color: #505050; }
+.CHeal     { color: #00f; }
+
+
+/* ============================================================ */
+/* Bilder                                                       */
+/* ============================================================ */
+.cpic {
+  border-width: 1px;
+  max-height: 90px;
+  max-width: 86px;
+}
+
+.img_town {
+  float: right;
+  border-width: 1px;
+  margin: 4px 0;
+  max-height: 10em;
+  max-width: 45%;
+}
+
+
+/* ============================================================ */
+/* Tabellen Layout                                              */
+/* ============================================================ */
+#PAGE_TABLE {
+  margin: 0 auto;
+  table-layout: fixed;
+  width: 1156px;
+}
+
+#PAGE_HEAD {
+  background: url(gfx/page_head.jpg) center no-repeat;
+  height: 80px;
+  width: 800px;
+}
+
+#CONT_HEAD {
+  background: url(gfx/cont_head.jpg) center bottom no-repeat;
+  color: #ccc;
+  height: 163px;
+  padding: 10px;
+  vertical-align: middle;
+  width: 800px;
+}
+
+#NAV_HEAD_LEFT {
+  background: url(gfx/nav_head_left.jpg) center bottom no-repeat;
+  height: 163px;
+  padding: 0;
+  vertical-align: bottom;
+  width:  178px;
+}
+
+#NAV_HEAD_RIGHT {
+  background: url(gfx/nav_head_right.jpg) center bottom no-repeat;
+  height: 163px;
+  padding: 0;
+  vertical-align: bottom;
+  width:  178px;
+}
+
+#CONT_BODY {
+  background: url(gfx/cont_body.jpg) center top repeat-y;
+  padding: 0 45px 25px;
+  vertical-align: top;
+  width: 800px;
+}
+
+#NAV_BODY_LEFT,
+#NAV_BODY_RIGHT {
+  background: url(gfx/nav_body.jpg) center top repeat-y;
+  vertical-align: top;
+  width: 178px;
+  padding: 0 23px;
+}
+
+#PAGE_FOOT {
+  background: url(gfx/cont_foot.jpg) center top no-repeat;
+  height: 165px;
+  width: 800px;
+}
+
+#PAGE_FOOT_LEFT {
+  background: url(gfx/page_foot_left.jpg) center top no-repeat;
+  height: 165px;
+  width:  178px;
+}
+
+#PAGE_FOOT_RIGHT {
+  background: url(gfx/page_foot_right.jpg) center top no-repeat;
+  height: 165px;
+  width:  178px;
+}
+
+
+/* ============================================================ */
+/* Darstellung der Kampfberichte                                */
+/* ============================================================ */
+.bmap {
+  background: url(gfx/bmap_grid.png);
+  border-width: 1px;
+  height: 88px; /* 11 Felder */
+  margin-bottom: 2em;
+  position: relative;
+  width: 248px; /* 31 Felder */
+}
+
+.bfac1,
+.bfac2 {
+  height: 7px;
+  position: absolute;
+  width: 7px;
+}
+
+  .bfac1 { background: url(gfx/faction1.gif); }
+  .bfac2 { background: url(gfx/faction2.gif); }
+
+/* Kämpfersymbol mit Highlight */
+.bmap > .CR {
+  -webkit-box-shadow: 0 0 3px;
+  box-shadow: 0 0 3px;
+}
+
+#EgLinks > table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+#EgStatus > table {
+  display: inline-table;
+  margin: 0 2%;
+  width: 46%;
+}
+
+#EgLoot > table {
+  margin: 0 auto;
+  min-width: 50%;
+}
+
+
+/* ============================================================ */
+/* Geschlechter Icons                                           */
+/* ============================================================ */
+.gender-m::after,
+.gender-f::after {
+  background: center no-repeat;
+  background-size: contain;
+  content: " ";
+  display: inline-block;
+  height: .8em;
+  margin-left: .3em;
+  width: .8em;
+}
+
+  .gender-m::after {
+    width: .7em;
+  }
+
+.gender-m::after       { background-image: url(gfx/gender_icon_male.svg); }
+.gender-f::after       { background-image: url(gfx/gender_icon_female.svg); }
+.CI > .gender-m::after { background-image: url(gfx/gender_icon_male777.svg); }
+.CI > .gender-f::after { background-image: url(gfx/gender_icon_female777.svg); }
+
+
+/* ============================================================ */
+/* Effekte                                                      */
+/* ============================================================ */
+.font-fadein {
+  animation: fadein 1s ease-out 1;
+}
+
+@keyframes fadein {
+  0% { color: transparent; }
+  100% { color: inherit; }
+}
+
+
+/* ============================================================ */
+/* Workarounds                                                  */
+/* ============================================================ */
+
+/* Marktstände */
+#CONT_BODY[data-page="market"] > table:last-of-type td {
+  border-width: 1px;
+}
+#CONT_BODY[data-page="market"] > table:last-of-type div[style] {
+  max-height: 5.6rem !important;
+}
+#CONT_BODY[data-page="market"] input {
+  padding-left: 2px;
+  padding-right: 2px;
+  margin: .2rem;
+}
+
+/* Zeilenumbruch erlauben */
+#CONT_BODY > table[width="98%"]:only-of-type, /* Charakterdarstellung */
+#CONT_BODY > table[width="90%"]:only-of-type, /* Gildenbeschreibung */
+#CONT_BODY > table[width="60%"] ~ table[width="80%"]:last-of-type { /* Stadtbeschreibung */
+  table-layout: fixed;
+}
+
+#CONT_BODY > table[width="98%"]:only-of-type td.L[colspan="3"] > div[style="overflow: auto; width:100%; height:100%;"],
+#CONT_BODY > table[width="90%"]:only-of-type td.L[colspan="2"] > div[style="overflow: auto; width:100%; height:100%;"],
+#CONT_BODY > table[width="60%"] ~ table[width="80%"]:last-of-type td.L {
+  word-wrap: break-word;
+}
+
+/* rechtsbündiger Text */
+td.L span[style="float:right"] {
+  display: block;
+  text-align: right;
+  float: none !important;
+  clear: right;
+}
+td.L span[style="float:right"]+br {
+  display: none;
+}
+
+/* Gildenbild zentrieren */
+div[style="overflow: auto; width:230px; height:120px;"] {
+  height: auto !important;
+  width: 100% !important;
+}
+
+img[alt="Gildenzeichen"] {
+  max-width: 100% !important;
+}
+
+/* Nachricht lesen vergrößern */
+div[style="overflow: auto; width:100%; height:200px;"] {
+  height: auto !important;
+  max-height: 300px;
+}
+
+/* Warnung vor Auktionen außerhalb */
+input[name="auction_id"] + table td.CR::after {
+  content: "(Ware muss dort abgeholt werden)";
+  display: block;
+}
