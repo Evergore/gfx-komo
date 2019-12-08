@@ -404,12 +404,10 @@ h6 {
 
 #mapMenuNewTask header > a {
   cursor: pointer;
-  padding: 2px 5px 2px 25px;
+  padding: 2px 5px 2px 30px;
   position: absolute;
   right: 0;
   top: 0;
-  bottom: 0;
-  display: block;
 }
 
 
