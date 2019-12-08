@@ -297,9 +297,9 @@ h6 {
 .map_town12 { background-position: -50px -350px }
 
 /* Canvas Karte */
-#mapDisplay { max-width: 76%; }
-#mapControl { width: 76%; }
-#mapMenu    { width: 24%; }
+#mapDisplay { max-width: 540px; }
+#mapControl { width: 540px; }
+#mapMenu    { width: 170px; }
 
 /**** Karte ****/
 #mapDisplay {
