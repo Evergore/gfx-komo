@@ -1,7 +1,3 @@
-@charset "utf-8";
-
-/* Evergore Komo Grafikpaket */
-
 /* ============================================================ */
 /* general                                                      */
 /* ============================================================ */
@@ -12,13 +8,12 @@
 }
 
 html {
-  font-size: 13px;
+  font: normal normal 400 13px/1.4 Helvetica, Arial, sans-serif;
 }
 
 body {
   background: #000;
   color: #000;
-  font: normal normal 400 1rem/1.4 Helvetica, Arial, sans-serif;
 }
 
 table {
@@ -52,7 +47,6 @@ div, dl, menu, nav, section {
 }
 
 p {
-  font-size: 1rem;
   margin: 1rem 0;
   text-align: left;
 }
@@ -124,10 +118,6 @@ label + label {
 .btn[disabled] {
   background: #a6a386;
   color: #777;
-}
-
-button + button {
-  margin-left: 1.5rem !important;
 }
 
 th > input[type="button"],
@@ -249,6 +239,137 @@ h6 {
 /* ============================================================ */
 /* Karte                                                        */
 /* ============================================================ */
+#mapDisplay { max-width: 540px; }
+#mapControl { width: 540px; }
+#mapMenu    { width: 170px; }
+
+/* Canvas */
+#mapDisplay {
+  background-image: url(gfx/map_veil.png), url(gfx/map_tiles.png);
+  background-size: 0 0;
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-height: 550px;
+  min-height: 200px;
+  overflow: hidden;
+  outline-width: 1px;
+  position: relative;
+}
+
+#mapDisplay > canvas {
+  position: absolute;
+  transform-origin: top left;
+  top: 0;
+  left: 0;
+}
+
+
+/* Menü Spalte */
+#mapMenu {
+  float: right;
+  padding-left: 10px;
+}
+
+#mapMenu > section.active    { display: block; }
+#mapMenu > section + section { display: none;
+  margin-top: 10px;
+}
+
+
+/* Menü > Info */
+#mapMenu dl > div.active { display: block; }
+#mapMenu dl > div        { display: none;
+  border-width: 0 1px 1px;
+  padding: 0 5px;
+}
+
+#mapMenu dd {
+  margin-left: 25px;
+}
+
+
+/* Menü > Aufträge */
+#mapMenuTaskList {
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+}
+
+#mapMenuTaskList li {
+  padding: .3rem 0;
+  border-bottom-width: 1px;
+  margin-bottom: 1.2rem;
+}
+
+#mapMenuTaskList time {
+  float: right;
+}
+#mapMenuTaskList nav {
+  display: flex;
+  justify-content: space-between;
+}
+#mapMenuTaskList nav > button {
+  flex: 0 0 30px;
+}
+
+
+/* Menü > Eingabe */
+#mapMenuNewTask > *.active  { height: auto; }
+#mapMenuNewTask > *         { height: 0;
+  overflow: hidden;
+}
+
+#mapMenuNewTask > menu > *.active      { display: inline; }
+#mapMenuNewTask > menu > *:not(header) { display: none; }
+
+#mapMenuNewTask > form {
+  white-space: nowrap;
+}
+
+#mapMenuNewTask > form > div {
+  display: inline-block;
+  width: 100%;
+  min-height: 5rem;
+  transition: transform .3s;
+  vertical-align: top;
+}
+
+#mapMenuNewTask > form > div > *:not(header) {
+  display: block;
+  line-height: 2rem;
+  margin: .5rem auto;
+  white-space: normal;
+}
+
+#mapMenuNewTask header {
+  position: relative;
+}
+
+#mapMenuNewTask header > a {
+  cursor: pointer;
+  padding: 2px 5px 2px 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+/* Steuerung */
+#mapControl {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+#mapZoom {
+  display: flex;
+  justify-content: center;
+}
+
+#mapZoom button:last-child {
+  margin-left: 1.5rem;
+}
+
 
 /* Geländegrafik in der Gruppenübersicht */
 .map,
@@ -295,134 +416,6 @@ h6 {
 .map_town11 { background-position: -50px -300px }
 .map_town2  { background-position: 0 -350px }
 .map_town12 { background-position: -50px -350px }
-
-/* Canvas Karte */
-#mapDisplay { max-width: 540px; }
-#mapControl { width: 540px; }
-#mapMenu    { width: 170px; }
-
-/**** Karte ****/
-#mapDisplay {
-  background-image: url(gfx/map_veil.png), url(gfx/map_tiles.png);
-  background-size: 0 0;
-  box-sizing: content-box;
-  margin: 0 auto;
-  max-height: 550px;
-  min-height: 200px;
-  overflow: hidden;
-  outline-width: 1px;
-  position: relative;
-}
-
-#mapDisplay > canvas {
-  position: absolute;
-  transform-origin: top left;
-  top: 0;
-  left: 0;
-}
-
-
-/**** Menü ****/
-#mapMenu {
-  float: right;
-  padding-left: 10px;
-}
-
-#mapMenu > section.active    { display: block; }
-#mapMenu > section + section { display: none;
-  margin-top: 10px;
-}
-
-
-/**** Menü, Info ****/
-#mapMenu dl > div.active { display: block; }
-#mapMenu dl > div        { display: none;
-  border-width: 0 1px 1px;
-  padding: 0 5px;
-}
-
-#mapMenu dd {
-  margin-left: 25px;
-}
-
-
-/**** Menü, Aufträge ****/
-#mapMenuTaskList {
-  margin: 0;
-  padding: 0 0 0 1.5rem;
-}
-
-#mapMenuTaskList li {
-  padding: .3rem 0;
-  border-bottom-width: 1px;
-  margin-bottom: 1.2rem;
-}
-
-#mapMenuTaskList time {
-  float: right;
-}
-#mapMenuTaskList nav {
-  display: flex;
-  justify-content: space-between;
-}
-#mapMenuTaskList nav > button {
-  flex: 0 0 30px;
-}
-
-
-/**** Menü, Eingabe ****/
-#mapMenuNewTask > *.active  { height: auto; }
-#mapMenuNewTask > *         { height: 0;
-  overflow: hidden;
-}
-
-#mapMenuNewTask > menu > *.active      { display: inline; }
-#mapMenuNewTask > menu > *:not(header) { display: none; }
-
-#mapMenuNewTask > form {
-  white-space: nowrap;
-}
-
-#mapMenuNewTask > form > div {
-  display: inline-block;
-  width: 100%;
-  min-height: 5rem;
-  transition: transform .3s;
-  vertical-align: top;
-}
-
-#mapMenuNewTask > form > div > *:not(header) {
-  display: block;
-  line-height: 2rem;
-  margin: .5rem auto;
-  white-space: normal;
-}
-
-#mapMenuNewTask header {
-  position: relative;
-}
-
-#mapMenuNewTask header > a {
-  cursor: pointer;
-  padding: 2px 5px 2px 30px;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-
-/**** Steuerung ****/
-#mapControl {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-
-#mapZoom {
-  display: flex;
-  justify-content: center;
-}
 
 
 /* ============================================================ */
@@ -586,12 +579,11 @@ h5 ~ a {
   width: 7px;
 }
 
-  .bfac1 { background: url(gfx/faction1.gif); }
-  .bfac2 { background: url(gfx/faction2.gif); }
+.bfac1 { background: url(gfx/faction1.gif); }
+.bfac2 { background: url(gfx/faction2.gif); }
 
 /* Kämpfersymbol mit Highlight */
 .bmap > .CR {
-  -webkit-box-shadow: 0 0 3px;
   box-shadow: 0 0 3px;
 }
 
@@ -626,9 +618,9 @@ h5 ~ a {
   width: .8em;
 }
 
-  .gender-m::after {
-    width: .7em;
-  }
+.gender-m::after {
+  width: .7em;
+}
 
 .gender-m::after       { background-image: url(gfx/gender_icon_male.svg); }
 .gender-f::after       { background-image: url(gfx/gender_icon_female.svg); }
