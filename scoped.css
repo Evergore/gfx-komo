@@ -6,6 +6,10 @@ main *, main *:before, main *:after {
   outline: 0 solid #606040;
 }
 
+main {
+  text-align: center;
+}
+
 main td {
   text-align: center;
   vertical-align: middle;
@@ -219,8 +223,8 @@ main h6 {
 /* ============================================================ */
 /* Karte                                                        */
 /* ============================================================ */
-#mapDisplay { max-width: 540px; }
-#mapControl { width: 540px; }
+#mapDisplay { max-width: calc(100% - 170px); }
+#mapControl { width: calc(100% - 170px); }
 #mapMenu    { width: 170px; }
 
 /* Canvas */
@@ -337,13 +341,14 @@ main h6 {
 #mapControl {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
 }
 
 #mapZoom {
   display: flex;
   justify-content: center;
+  order: -1;
 }
 
 #mapZoom button:last-child {
