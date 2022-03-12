@@ -611,3 +611,32 @@ main input[name="auction_id"] + table td.CR::after {
   content: "(Ware muss dort abgeholt werden)";
   display: block;
 }
+
+
+
+
+/*
+ CSS for the main interaction
+*/
+.accordion > input[name="collapse"] {
+  display: none;
+}
+
+.accordion .content {
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s;
+}
+
+/* For Desktop */
+@media only screen and (min-width: 620px){
+.accordion > input[name="collapse"]:checked ~ .content {
+  height: auto;
+}
+}
+
+.accordion label {
+  cursor: pointer;
+  font-weight: normal;
+  user-select: none;  
+}
